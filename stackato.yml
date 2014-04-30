@@ -1,4 +1,4 @@
-name: dcms
+name: django-cms
 framework: python
 mem: 128M
 env:
@@ -14,8 +14,8 @@ requirements:
 services:
   ${name}-db: postgresql
 min_version:
-    client: 1.4.3  
-ignores: 
+    client: 1.4.3
+ignores:
   - '*.pyc'
   - 'mycms.db'
   - '.git/'
