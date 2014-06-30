@@ -5,23 +5,23 @@ env:
   DJANGO_SETTINGS_MODULE: settings
 requirements:
   pypm:
-    - django-cms==2.3.6
-    - django
-    - south
-    - pil
-    - psycopg2
-    - six
+  - django-cms==2.3.6
+  - django
+  - south
+  - pil
+  - psycopg2
+  - six
 services:
   ${name}-db: postgresql
 min_version:
-    client: 1.4.3
+  client: 1.4.3
 ignores:
-  - '*.pyc'
-  - 'mycms.db'
-  - '.git/'
+- '*.pyc'
+- mycms.db
+- .git/
 
 hooks:
   post-staging:
-    - python manage.py syncdb --all --noinput
-    - python manage.py migrate --fake
-    - python setup_demo_user.py
+  - python manage.py syncdb --all --noinput
+  - python manage.py migrate --fake
+  - python setup_demo_user.py
