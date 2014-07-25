@@ -1,16 +1,7 @@
 name: django-cms
-framework: python
 mem: 128M
 env:
   DJANGO_SETTINGS_MODULE: settings
-requirements:
-  pypm:
-  - django-cms==2.3.6
-  - django
-  - south
-  - pil
-  - psycopg2
-  - six
 services:
   ${name}-db: postgresql
 min_version:
