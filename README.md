@@ -1,7 +1,7 @@
 django-cms
 ==========
 
-To deploy on Stackato, execute the following command:
+To deploy on HPE Helion Stackato, execute the following command:
 
      stackato push -n
 
