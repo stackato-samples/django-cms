@@ -1,6 +1,6 @@
 django-cms==2.3.6
-django
+django==1.4.5
 south
-pil
+pillow==2.9.0
 psycopg2
 six
