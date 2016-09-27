@@ -1,21 +1,11 @@
 applications:
 - name: django-cms
+  buildpack: https://github.com/cloudfoundry/python-buildpack
+  command: python manage.py syncdb --all --noinput && python manage.py migrate --fake && python setup_demo_user.py && python manage.py runserver 0.0.0.0:$PORT
+  env:
+    DJANGO_SETTINGS_MODULE: settings
   memory: 128M
   services:
-    ${name}-db:
-      type: postgresql
-  stackato:
-    env:
-      DJANGO_SETTINGS_MODULE:
-        default: settings
-    hooks:
-      post-staging:
-      - python manage.py syncdb --all --noinput
-      - python manage.py migrate --fake
-      - python setup_demo_user.py
-    ignores:
-    - '*.pyc'
-    - mycms.db
-    - .git/
-    min_version:
-      client: 1.4.3
+    # postgresql
+    - django-cms-db
+  stack: cflinuxfs2
