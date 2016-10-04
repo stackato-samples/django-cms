@@ -5,7 +5,7 @@ applications:
   env:
     DJANGO_SETTINGS_MODULE: settings
   memory: 128M
-  services:
+  # services:
     # postgresql
-    - django-cms-db
+    # - django-cms-db
   stack: cflinuxfs2
